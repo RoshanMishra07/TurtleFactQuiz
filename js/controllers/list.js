@@ -3,10 +3,10 @@
  */
 (function(){
     /*
-     * Creating List controller and attaching it to the main turtleFacts module
+     * Creating List controller and attaching it to the main covidFacts module
      */
     angular
-        .module("turtleFacts")
+        .module("covidFacts")
         .controller("listCtrl", ListController);
     
     /*

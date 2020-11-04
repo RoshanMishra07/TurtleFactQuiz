@@ -4,10 +4,10 @@
 (function(){
 
     /*
-     * attaching results controller function to the turtleFacts module 
+     * attaching results controller function to the covidFacts module 
      */
     angular
-        .module("turtleFacts")
+        .module("covidFacts")
         .controller("resultsCtrl", ResultsController);
 
     /*

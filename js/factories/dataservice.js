@@ -4,10 +4,10 @@
 (function(){
 
     /*
-     * Declaring a factory service as part of the existing turtleFacts Module.
+     * Declaring a factory service as part of the existing covidFacts Module.
      */
     angular
-        .module("turtleFacts")
+        .module("covidFacts")
         .factory("DataService", DataService);
 
     /*
@@ -67,19 +67,79 @@
     var quizQuestions  = [
         {
             type: "text",
-            text: "How much can a loggerhead weigh?",
+            text: "What does COVID-19 stand for?",
             possibilities: [
                 {
-                    answer: "Up to 20kg"
+                    answer: "It's a term for Coronavirus Disease 19, because it's the 19th strain of coronavirus discovered."
                 },
                 {
-                    answer: "Up to 115kg"
+                    answer: "It's a term that stands for Coronavirus Disease 2019, the year it was first identified."
+                },
+            ],
+            selected: null,
+            correct: null
+        },
+        {
+            type: "text",
+            text: "What other viruses belong to the coronavirus family?",
+            possibilities: [
+                {
+                    answer: "SARS and influenza"
                 },
                 {
-                    answer: "Up to 220kg"
+                    answer: "SARS and MERS"
                 },
                 {
-                    answer: "Up to 500kg"
+                    answer: "SARS and HIV"
+                },
+
+            ],
+            selected: null,
+            correct: null
+        },
+        {
+            type: "text",
+            text: "True or False: The virus is mutating rapidly.",
+            possibilities: [
+                {
+                    answer: "True"
+                },
+                {
+                    answer: "False"
+                },
+
+            ],
+            selected: null,
+            correct: null
+        },
+        {
+            type: "text",
+            text: "How does weather seem to affect the novel coronavirus?",
+            possibilities: [
+                {
+                    answer: "The virus can’t survive in hot, humid climates."
+                },
+                {
+                    answer: "Cold temperatures can kill the virus."
+                },
+                {
+                    answer: "It is not yet known."
+                },
+
+            ],
+            selected: null,
+            correct: null
+        },
+        {
+            type: "text",
+            text: "True or False: COVID-19 has currently been detected on all seven continents.",
+            possibilities: [
+                {
+                    answer: "True"
+                },
+                
+                {
+                    answer: "False"
                 }
             ],
             selected: null,
@@ -87,59 +147,36 @@
         },
         {
             type: "text",
-            text: "What is the typical lifespan of a Green Sea Turtle?",
+            text: "How is COVID-19 passed on?",
             possibilities: [
                 {
-                    answer: "150 years"
+                    answer: "Through droplets that come from your mouth and nose when you cough or breathe out"
                 },
                 {
-                    answer: "10 years"
+                    answer: "In sexual fluids, including semen, vaginal fluids or anal mucous"
                 },
                 {
-                    answer: "80 years"
+                    answer: "By drinking unclean water"
                 },
-                {
-                    answer: "40 years"
-                }
             ],
             selected: null,
             correct: null
         },
         {
-            type: "image",
-            text: "Which of these is the Alligator Snapping Turtle?",
+            type: "text",
+            text: "What are the common symptoms of COVID-19?",
             possibilities: [
                 {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573536/2399413165_bcc8031cac_z_fqaexq.jpg"
+                    answer: "A new and continuous cough"
                 },
                 {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573475/olive-ridley1_bdrbzh.jpg"
+                    answer: "Fever"
                 },
                 {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573717/Leatherback-turtle-007_p1qytx.jpg"
+                    answer: "Tiredness"
                 },
                 {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573639/Alligator_snapping_turtle_-_Geierschildkr_C3_B6te_-_Alligatorschildkr_C3_B6te_-_Macrochelys_temminckii_01_uwqvbi.jpg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "image",
-            text: "Which of these is the Green Turtle?",
-            possibilities: [
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573240/Sea-Turtles-Habitat_kiipu7.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573596/Kemp_s_Ridley_sea_turtle_nesting_jqe0fg.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573639/Alligator_snapping_turtle_-_Geierschildkr_C3_B6te_-_Alligatorschildkr_C3_B6te_-_Macrochelys_temminckii_01_uwqvbi.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573676/SCR_290360hawskbill-why-matter-LG_wqf0kl.jpg"
+                    answer: "All of the above"
                 }
             ],
             selected: null,
@@ -147,19 +184,33 @@
         },
         {
             type: "text",
-            text: "Where does the Kemp's Ridley Sea Turtle live?'",
+            text: "Are people living with HIV always more at risk?",
             possibilities: [
                 {
-                    answer: "Tropical waters all around the world"
+                    answer: "Yes – people with HIV have weaker immune systems"
                 },
                 {
-                    answer: "Eastern Australia"
+                    answer: "No – people who adhere to antiretroviral treatment (ART) and have a high CD4 count aren’t more at risk"
+                },
+            ],
+            selected: null,
+            correct: null
+        },
+        {
+            type: "text",
+            text: "When should fabric face masks be worn?",
+            possibilities: [
+                {
+                    answer: "On public transport"
                 },
                 {
-                    answer: "Coastal North Atlantic"
+                    answer: "In confined or crowded spaces"
                 },
                 {
-                    answer: "South pacific islands"
+                    answer: "In small shops"
+                },
+                {
+                    answer: "All of the above"
                 }
             ],
             selected: null,
@@ -167,100 +218,18 @@
         },
         {
             type: "text",
-            text: "What is the most common turtle in US waters?",
+            text: "Can COVID-19 be cured?",
             possibilities: [
                 {
-                    answer: "Loggerhead turtle"
+                    answer: "Yes – Hot drinks can cure COVID-19"
                 },
                 {
-                    answer: "Leatherback turtle"
+                    answer: "No – COVID-19 is a death sentence"
                 },
                 {
-                    answer: "Hawksbill Turtle"
+                    answer: "No – but most people get better by themselves"
                 },
-                {
-                    answer: "Alligator Snapping Turtle"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "What is the largest sea turtle on earth?",
-            possibilities: [
-                {
-                    answer: "Eastern Snake Necked Turtle"
-                },
-                {
-                    answer: "Olive Ridley Sea Turtle"
-                },
-                {
-                    answer: "Kemp's Ridley Sea Turtle'"
-                },
-                {
-                    answer: "Leatherback"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "image",
-            text: "Which of these is the Olive Ridley Turtle?",
-            possibilities: [
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573757/loggerheadTurtle_2651448b_fuxtrz.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573676/SCR_290360hawskbill-why-matter-LG_wqf0kl.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573475/olive-ridley1_bdrbzh.jpg"
-                },
-                {
-                    answer: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_560/v1538573596/Kemp_s_Ridley_sea_turtle_nesting_jqe0fg.jpg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "How Heavy can a leatherback turtle be?",
-            possibilities: [
-                {
-                    answer: "900kg"
-                },
-                {
-                    answer: "40kg"
-                },
-                {
-                    answer: "110kg"
-                },
-                {
-                    answer: "300kg"
-                }
-            ],
-            selected: null,
-            correct: null
-        },
-        {
-            type: "text",
-            text: "Which of these turtles are herbivores?",
-            possibilities: [
-                {
-                    answer: "Loggerhead Turtle"
-                },
-                {
-                    answer: "Hawksbill Turtle"
-                },
-                {
-                    answer: "Leatherback Turtle"
-                },
-                {
-                    answer: "Green Turtle"
-                }
+
             ],
             selected: null,
             correct: null
@@ -268,77 +237,26 @@
     ];
 
     var turtlesData = [
+        
         {
-            type: "Green Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573240/Sea-Turtles-Habitat_kiipu7.jpg",
-            locations: "Tropical and subtropical oceans worldwide",
-            size: "Up to 1.5m and up to 300kg",
-            lifespan: "Over 80 years",
-            diet: "Herbivore",
-            description: "The green turtle is a large, weighty sea turtle with a wide, smooth carapace, or shell. It inhabits tropical and subtropical coastal waters around the world and has been observed clambering onto land to sunbathe. It is named not for the color of its shell, which is normally brown or olive depending on its habitat, but for the greenish color of its skin. There are two types of green turtles—scientists are currently debating whether they are subspecies or separate species—including the Atlantic green turtle, normally found off the shores of Europe and North America, and the Eastern Pacific green turtle, which has been found in coastal waters from Alaska to Chile."
+            type: "N-95 Masks",
+          image_url: "https://image.shutterstock.com/image-photo/kn95-n95-mask-protection-pm-260nw-1681636747.jpg",
+          description: 'An N95 respirator is a commonly-used, abbreviated name for an N95 filtering facepiece respirator, which is a particulate-filtering facepiece respirator that meets the U.S. National Institute for Occupational Safety and Health (NIOSH) N95 classification of air filtration, meaning that it filters at least 95% of airborne particles. This standard does not require that the respirator be resistant to oil; another standard, P95, adds that requirement. The N95 type is the most common particulate-filtering facepiece respirator.It is an example of a mechanical filter respirator, which provides protection against particulates but not against gases or vapors.An authentic N95 respirator is marked with the text "NIOSH" or the NIOSH logo, the filter class ("N95"), a "TC" approval number of the form XXX-XXXX, the approval number must be listed on the NIOSH Certified Equipment List (CEL) or the NIOSH Trusted-Source page, and it must have headbands instead of ear loops.'
         },
         {
-            type: "Loggerhead Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573757/loggerheadTurtle_2651448b_fuxtrz.jpg",
-            locations: "Tropical and subtropical oceans worldwide",
-            size: "90cm, 115kg",
-            lifespan: "More than 50 years",
-            diet: "Carnivore",
-            description: "Loggerhead turtles are the most abundant of all the marine turtle species in U.S. waters. But persistent population declines due to pollution, shrimp trawling, and development in their nesting areas, among other factors, have kept this wide-ranging seagoer on the threatened species list since 1978. Their enormous range encompasses all but the most frigid waters of the world's oceans. They seem to prefer coastal habitats, but often frequent inland water bodies and will travel hundreds of miles out to sea."
+            type: "PPE Kit",
+            image_url: "https://images-na.ssl-images-amazon.com/images/I/61k-rZ3D%2BBL._SX466_.jpg",
+            description: "Personal protective equipment (PPE) is protective clothing, helmets, goggles, or other garments or equipment designed to protect the wearer's body from injury or infection. The hazards addressed by protective equipment include physical, electrical, heat, chemicals, biohazards, and airborne particulate matter. Protective equipment may be worn for job-related occupational safety and health purposes, as well as for sports and other recreational activities.Protective clothing is applied to traditional categories of clothing, and protective gear applies to items such as pads, guards, shields, or masks, and others. PPE suits can be similar in appearance to a cleanroom suit. The purpose of personal protective equipment is to reduce employee exposure to hazards when engineering controls and administrative controls are not feasible or effective to reduce these risks to acceptable levels. PPE is needed when there are hazards present. PPE has the serious limitation that it does not eliminate the hazard at the source and may result in employees being exposed to the hazard if the equipment fails."
         },
         {
-            type: "Leatherback Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573717/Leatherback-turtle-007_p1qytx.jpg",
-            locations: "All tropical and subtropical oceans",
-            size: "Up to 2m, up to 900kg",
-            lifespan: "45 years",
-            diet: "Carnivore",
-            description: "Leatherbacks are the largest turtles on Earth, growing up to seven feet (two meters) long and exceeding 2,000 pounds (900 kilograms). These reptilian relics are the only remaining representatives of a family of turtles that traces its evolutionary roots back more than 100 million years. Once prevalent in every ocean except the Arctic and Antarctic, the leatherback population is rapidly declining in many parts of the world. While all other sea turtles have hard, bony shells, the inky-blue carapace of the leatherback is somewhat flexible and almost rubbery to the touch. Ridges along the carapace help give it a more hydrodynamic structure. Leatherbacks can dive to depths of 4,200 feet (1,280 meters)—deeper than any other turtle—and can stay down for up to 85 minutes."
+            type: "Hand Sanitizer",
+            image_url: "https://image.shutterstock.com/image-photo/coronavirus-prevention-medical-surgical-masks-600w-1661207908.jpg",
+            description: "Hand sanitizer is a liquid, gel, or foam generally used to decrease infectious agents on the hands. In most settings hand washing with soap and water is generally preferred. Hand sanitizer is less effective at killing certain kinds of germs, such as norovirus and Clostridium difficile and unlike soap and water, it cannot remove harmful chemicals. People may incorrectly wipe off hand sanitizer before it has dried, and some are less effective because their alcohol concentrations are too low. In most healthcare settings alcohol-based hand sanitizers are preferable to hand washing with soap and water, because it may be better tolerated and is more effective at reducing bacteria. Hand washing with soap and water, however, should be carried out if contamination can be seen, or following the use of the toilet. The general use of non-alcohol-based hand sanitizers has no recommendations."
         },
         {
-            type: "Hawksbill Sea Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573676/SCR_290360hawskbill-why-matter-LG_wqf0kl.jpg",
-            locations: "Tropical Coastal areas around the world",
-            size: "Over 1m, 45-68kg",
-            lifespan: "30-50 Years",
-            diet: "Carnivore",
-            description: "Dolor possimus voluptas hic aliquam rem doloremque minus maiores accusantium? Laborum perferendis harum blanditiis quod quia? Aspernatur sunt et fuga delectus ab rem excepturi. Ipsa quibusdam facere consequuntur magnam vitae? Consectetur consectetur necessitatibus beatae delectus quibusdam in! Est nobis omnis iusto illum fugiat maxime! Neque fugiat reiciendis sequi corrupti minima facere distinctio aliquam est voluptatibus. Sint incidunt soluta atque ducimus."
-        },
-        {
-            type: "Alligator Snapping Turtle",
-          image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573639/Alligator_snapping_turtle_-_Geierschildkr_C3_B6te_-_Alligatorschildkr_C3_B6te_-_Macrochelys_temminckii_01_uwqvbi.jpg",
-            locations: "Along the Atlantic Coast of USA",
-            size: "around 60cm, up to 100kg",
-            lifespan: "20-70 years",
-            diet: "Carnivore",
-            description: "The prehistoric-looking alligator snapping turtle is the largest freshwater turtle in North America and among the largest in the world. With its spiked shell, beaklike jaws, and thick, scaled tail, this species is often referred to as the 'dinosaur of the turtle world.' Found almost exclusively in the rivers, canals, and lakes of the southeastern United States, alligator snappers can live to be 50 to 100 years old. Males average 26 inches (66 centimeters) in shell length and weigh about 175 pounds (80 kilograms), although they have been known to exceed 220 pounds (100 kilograms). The much smaller females top out at around 50 pounds (23 kilograms)."
-        },
-        {
-            type: "Kemp's Ridley Sea Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573596/Kemp_s_Ridley_sea_turtle_nesting_jqe0fg.jpg",
-            locations: "Coastal areas of the North Atlantic",
-            size: "65cm, up to 45kg",
-            lifespan: "Around 50 years",
-            diet: "Omnivore",
-            description: "The Kemp’s ridley turtle is the world’s most endangered sea turtle, and with a worldwide female nesting population roughly estimated at just 1,000 individuals, its survival truly hangs in the balance. Their perilous situation is attributed primarily to the over-harvesting of their eggs during the last century. And though their nesting grounds are protected and many commercial fishing fleets now use turtle excluder devices in their nets, these turtles have not been able to rebound. For this reason, their nesting processions, called arribadas, make for especially high drama. During an arribada, females take over entire portions of beaches, lugging their big bodies through the sand with their flippers until they find a satisfying spot to lay their eggs. Even more riveting is the later struggle to the ocean of each tiny, vulnerable hatchling. Beset by predators, hatchlings make this journey at night, breaking out of their shells using their caruncle, a single temporary tooth grown just for this purpose."
-        },
-        {
-            type: "Olive Ridley Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573475/olive-ridley1_bdrbzh.jpg",
-            locations: "Tropical coastal areas around the world",
-            size: "70cm, 45kg",
-            lifespan: "50 years",
-            diet: "Omnivore",
-            description: "The olive ridley turtle is named for the generally greenish color of its skin and shell, or carapace. It is closely related to the Kemp’s ridley, with the primary distinction being that olive ridleys are found only in warmer waters, including the southern Atlantic, Pacific and Indian Oceans. Olive and Kemp’s ridleys are the smallest of the sea turtles, weighing up to 100 pounds (45 kilograms) and reaching only about 2 feet (65 centimeters) in shell length. The olive ridley has a slightly smaller head and smaller shell than the Kemp’s."
-        },
-        {
-            type: "Eastern Snake Necked Turtle",
-            image_url: "https://res.cloudinary.com/djxscnpzf/image/upload/c_scale,w_300/v1538573536/2399413165_bcc8031cac_z_fqaexq.jpg",
-            locations: "Eastern Australia",
-            size: "Up to 30cm",
-            lifespan: "25 years",
-            diet: "Carnivore",
-            description: "Snake-necked turtles, as the name suggests, have an unusually long neck. Their necks may be up to 60 percent of their carapace length. Their carapace is oval and flattened, usually dark-brown to black measuring up to 11 inches (27.5 cm) in length. Scutes are shed as the animals grow. The males have a longer, thicker tail than females and a concave plastron. They are excellent swimmers; they have large, webbed feet with sharp claws used to tear apart food."
+            type: "Gloves",
+            image_url: "https://i0.wp.com/vashielectricals.com/wp-content/uploads/2020/06/HG-NW32.png?fit=2200%2C2200&ssl=1",
+            description: "A glove is a garment covering the whole hand. Gloves usually have separate sheaths or openings for each finger and the thumb.If there is an opening but no (or a short) covering sheath for each finger they are called fingerless gloves. Fingerless gloves having one small opening rather than individual openings for each finger are sometimes called gauntlets, though gauntlets are not necessarily fingerless. Gloves which cover the entire hand or fist but do not have separate finger openings or sheaths are called mittens. Mittens are warmer than other styles of gloves made of the same material because fingers maintain their warmth better when they are in contact with each other; reduced surface area reduces heat loss."
         }
     ];
 

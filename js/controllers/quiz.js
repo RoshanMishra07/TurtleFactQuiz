@@ -5,14 +5,14 @@
 (function(){
 
     /*
-     * Call the angular module called turtleFacts that was created in js/app.js
+     * Call the angular module called covidFacts that was created in js/app.js
      * then attach the controller quizCtrl to it.
      *
      * The quiz controller is added as a named function instead of an anon func
      * to keep the code clean and readable.
      */
     angular
-        .module("turtleFacts")
+        .module("covidFacts")
         .controller("quizCtrl", QuizController);
 
     /*
